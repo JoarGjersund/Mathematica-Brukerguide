@@ -10,22 +10,27 @@ Rest/@ data fjerner første kolonne<br>
 <img src="img/2_1_9.jpg"><br>
 
 <b>Slå sammen kolonner (legge kolonner under hverandre)</b><br>
-Her benytter vi en kombinasjon av det vi har lært i forrige avsnitt. Til slutt legges alle resultatene sammen i en liste vi kaller alleResultater.<br> 
-<img src="img/2_1_10.JPG"><br>
+
+<img src="img/flatten.gif"><br>
 <p></p>
+<b>Fjerne elementer fra liste</b><br>
+Dersom man sitter med en liste med enkelte tomme verdier, eller verdier man ønsker å fjerne. F.Eks "N/A", kan det lett gjøres slik:<br>
+<img src="img/deleteCases.gif"><br><p></p>
 <b>Frekvenstabell:</b><br>
 Her er hvordan du lager en tabell som viser antall tilfeller av hver måling. Første kolonne er måling/resultat, andre kolonne er antall/frekvens<br>
 <img src="img/2_1_11.jpg"><br>
 Merk at denne tabellen er usortert, se lenger ned på siden for hvordan du kan sortere innholdet i tabeller.<br>
 
-Første kollonne er utfall, andre kollonne er antall tilfeller.<br>
 <p></p>
 <b>Kumulativ frekvenstabell:</b><br>
 For å vise kumulativt antall bruker vi funksjonen Accumulate[data (antall tilfeller)].
 Siden det er antall tilfeller vi ønsker å akumulere må vi hente ut daten fra andre kollonne i frekvenstabellen:<br>
-sf2 = sf[All, 2] (tabell[rad, kollonne])<br>
-kl = Accumulate[sf2] (Akumulerer lista og lagrer den med navnet kl)<br>
-main = MapThread[Append, {sf, kl}] (legger til akkumulert liste i tabellen og lagrer med navnet main)<p></p>
+<img src="img/2_1_12.jpg"><br>
+<b>Legge til kolonne i tabell:</b><br>
+
+<img src="img/2_1_13.jpg"><br>
+<img src="img/2_1_14.jpg"><br>
+<p></p>
 
 <b>Generere og sortere tabeller</b><br>
 Vertikal liste:<br>
