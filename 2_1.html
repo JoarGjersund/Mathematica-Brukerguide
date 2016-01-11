@@ -1,19 +1,25 @@
 <h2>2.1 Kumulative data, tabeller, og diagrammer</h2><br>
 
 Her tar vi utganspunkt i dataen vi har hentet fra en excell fil (se forrige kapitell). Dataen vi jobber med i dette eksemplet er gitt navnet "s"<br>
-Dataen består av en tabell men en liste over lengden man kan strekke forskjellige seigmenn før de ryker (resultat), og en tilsvarende liste som sier noe om fargen på den aktuelle seigmannen (farge)<p></p>
+Dataen består av en tabell men en liste over lengden man kan strekke forskjellige seigmenn før de ryker (resultat). Første rad i tabellen beskriver farge<p></p>
+<img src="img/2_1_8.jpg"><p></p>
 <b>Hente ut spesifikk kollonne/rad fra tabell</b><br>
-s[rad, kolonne]<br>
-sResultat = s[All, 1]<br>
+data[[rad, kolonne] (returnerer valgt rad og kolonne)<br>
+Rest@ data fjerner første rad<br>
+Rest/@ data fjerner første kolonne<br>
+<img src="img/2_1_9.jpg"><br>
 
+<b>Slå sammen kolonner (legge kolonner under hverandre)</b><br>
+Her benytter vi en kombinasjon av det vi har lært i forrige avsnitt. Til slutt legges alle resultatene sammen i en liste vi kaller alleResultater.<br> 
+<img src="img/2_1_10.JPG"><br>
+<p></p>
 <b>Frekvenstabell:</b><br>
-Tally[liste over utfall utfall]
-sf = Tally[{1, 1, 2, 3, 2,}]<br>
-output: sf = {{1, 2}, {2, 2}, {3, 1}]<br>
+Her er hvordan du lager en tabell som viser antall tilfeller av hver måling. Første kolonne er måling/resultat, andre kolonne er antall/frekvens<br>
+<img src="img/2_1_11.jpg"><br>
+Merk at denne tabellen er usortert, se lenger ned på siden for hvordan du kan sortere innholdet i tabeller.<br>
 
-Vi kan vise tabellen med kommandoen sf //TableForm
-bilde...<br>
 Første kollonne er utfall, andre kollonne er antall tilfeller.<br>
+<p></p>
 <b>Kumulativ frekvenstabell:</b><br>
 For å vise kumulativt antall bruker vi funksjonen Accumulate[data (antall tilfeller)].
 Siden det er antall tilfeller vi ønsker å akumulere må vi hente ut daten fra andre kollonne i frekvenstabellen:<br>
@@ -21,15 +27,21 @@ sf2 = sf[All, 2] (tabell[rad, kollonne])<br>
 kl = Accumulate[sf2] (Akumulerer lista og lagrer den med navnet kl)<br>
 main = MapThread[Append, {sf, kl}] (legger til akkumulert liste i tabellen og lagrer med navnet main)<p></p>
 
-<b>Generere tabeller og diagrammer</b><br>
+<b>Generere og sortere tabeller</b><br>
 Vertikal liste:<br>
 <img src="img/2_1_3.JPG"><br>
 Horisontal liste:<br>
 <img src="img/2_1_4.JPG"><br>
-Gjøre om fra vertikal til horisontal liste og motsatt:<br>
+Gjøre om fra horisontal til vertikal liste og motsatt:<br>
 <img src="img/2_1_7.jpg"><br>
 Horisontal og vertikal liste slått sammen:<br>
 <img src="img/2_1_5.jpg"><br>
+For å sortere innholdet i tabeller kan man bruke funksjonen<br>
+SortBy[liste, #[[kolonne]]&]<br>
+For å vise som tabell kan du skrive data //TableForm<br>
+
+
+<b>Generere diagrammer:</b><br>
 Stolpediagram:<br>
 <img src="img/2_1_6.jpg"><br>
 
