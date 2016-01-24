@@ -28,16 +28,19 @@
          $("#1_3").click(function() {
             $("#content").load("1_3.html");
         });
-         $("#2_0").click(function() {
-            $("#content").load("2_0.html");
+         $("#2_1_0").click(function() {
+            $("#content").load("2_1_0.html");
         });
         
-        $("#2_1").click(function() {
-            $("#content").load("2_1.html");
+        $("#2_1_1").click(function() {
+            $("#content").load("2_1_1.html");
         });
-        $("#2_2").click(function() {
-            $("#content").load("2_2.html");
+
+        $("#2_4_3").click(function() {
+            $("#content").load("2_4_3.html");
         });
+        
+        
         
     });
         
@@ -57,21 +60,44 @@
       
 
 
-        <h2>Innhold:</h2>
-      <DL>
-        <DT>1. Introduksjon</DT>
-            <DD><a id="1_0" href="#">1.0 Om denne guiden</a></DD>
-          <DD><a id="1_1" href="#">1.1 Basics om Mathematica og Wolfram Alpha</a></DD>
-          <DD><a id="1_2" href="#">1.2 Oppsett og grunnleggende innstillinger.</a></DD>
-        <DD><a id="1_3" href="#">1.3 Grunnleggende Syntaks</a></DD>
-        <DT>2. Data</DT>
-            <DD><a id ="2_0" href="#">2.0 Importere/Eksportere data fra/til excel<a/></DD>
-            <DD><a id ="2_1" href="#">2.1 Kumulative data, tabeller, og diagrammer<a/></DD>
-        </DL>
-             <DD><a id ="2_2" href="#">2.2 Beliggenhetsmål og spredningsmål<a/></DD>
-        </DL>
-          </a>
-
+		<UL>
+            <h2>Innhold:</h2>
+				<OL>
+					<LI>Introduksjon</LI>
+						<OL start="0">
+							<LI><a id="1_0" href="#">Om denne guiden</a></LI>
+                            <LI><a id="1_1" href="#">Basics om Mathematica og Wolfram Alpha</a></LI>
+							<LI><a id="1_2" href="#">Oppsett og grunnleggende innstillinger</a></LI>
+							<LI><a id="1_3" href="#">Grunnleggende Syntaks</a></LI>
+						</OL>
+			
+					<LI>Data</LI>
+						<OL>
+							<LI>Tabeller og diagrammer</LI>
+								<OL start="0">
+									<LI><a id ="2_1_0" href="#">Importere/Eksportere data fra/til excel </a></LI>
+									<LI><a id ="2_1_1" href="#">Kumulative data, tabeller, og diagrammer </a></LI>
+								</OL>
+							<LI>Belligenhetsmål og spredningsmål</LI>
+								<OL>
+									<LI>Median, prosentil, gjennomsnitt, varians, og standardavvik</LI>
+								</OL>
+								
+							<LI>Gruppert data</LI>
+								<OL>
+									<LI>Beliggenhets- og sprednigsmål for gruppert data</LI>
+								</OL>
+								
+							<LI>Flervariabel data og lineær regresjon</LI>
+								<OL>
+									<LI>Kovarians og korrelasjon</LI>
+									<LI>Summer av data</LI>
+                                    <LI><a id="2_4_3" href="#">Lineær regresjon</a></LI>
+								</OL>
+							
+							</OL>
+				</OL>
+		</UL>
 
 
 <hr>
