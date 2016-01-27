@@ -1,0 +1,24 @@
+﻿<h2>2.2.1 Median, gjennomsnitt</h2><p>
+<b><font color="#336699"> Definisjon (enkelt data):</font></b>
+<br><img src="img/2_2_1_media1.jpg"><br><img src="img/2_2_1_media2.jpg"><br>
+<b><font color="#336699">Beregning av enkelt data i Mathematica:</font></b><br><br>
+1. Lag data som <font color="#336699"><br>In[1]:= </font>data={x<sub>1</sub>,x<sub>2</sub>,x<sub>3</sub>...x<sub>n</sub>}<br>får ut<font color="#336699">Out[1]= </font>{x<sub>1</sub>,x<sub>2</sub>,x<sub>3</sub>...x<sub>n</sub>}<br>2. Skriv som innput<font color="#336699"><br>In[2]:= </font>{Mean [data], Median[data]}<br>får ut<font color="#336699">Out[2]= </font>{gjennomsnitt, median}<br><br><font color="009900">Eksempel:</font></b><br><br>La oss finne medianen og gjennomsnitt av data x<sub>n</sub>: {11, 11, 11.5, 11.5, 11.5, 12, 12.5, 13, 13, 13.5} som er {x<sub>1</sub>,x<sub>2</sub>,x<sub>3</sub>...x<sub>10</sub>}<br> Benytter vi formel for partall n og får median=12.25 og gjennomsnitt=&#931x/10=12.05<br><br>
+Slik ser beregning i Mathematica:<br><img src="img/2_2_1_media3.jpg"><br><b>
+<font color="#336699">Beregning av flervariable data:</b></font> <br><br>
+1. Lag liste eller generer tilfeldig data <font color="#336699"><br>In[1]:= </font> data = BlockRandom[SeedRandom[variable];
+  RandomInteger[variable, {variable, variable}]]</font> <br><br>
+2.  Grupper data<font color="#336699"><br>In[1]:= </font> Grid[data] <font color="#336699"><br>In[1]:= </font>Grid[data, Frame -> All]<br><br>
+3.1 For å finne gjennomsnitt og median til hver kolonne skriv <font color="#336699"><br>In[1]:= </font>{Mean [data], Median[data]} <br><br>
+3.2  Du kan velge en av kolonner for beregning<font color="#336699"><br>In[1]:= </font>data[[All, number of column to be calculated]]<br><br>
+3.3  Gjennomsnitt og median til den utvalgte kollonen <font color="#336699"><br>In[1]:= </font>{Mean [data[[All, number ofcolumn to be calculated]]], Median[data[[All, number of column to be calculated]]]} <br><br>
+<font color="009900">Eksempel:</font>:<br><img src="img/2_2_1_media4.jpg"><br><br>
+<font color="#336699"><b>Sortere, analisere flervariable data:</b></font> <br><br>1. Lag liste (usorterte data, flervariable data)<font color="#336699"><br>In[1]:= </font>data={parametre av flere variable}, for eksempel{class, bredde, høyde}<br><br>
+2.1  Grupper data etter første parameter<font color="#336699"><br>In[1]:= </font>byClass = GatherBy[data, First]<br><br>
+2.2  For å finne gjennomsnitt til den utvalgte gruppe skriv <font color="#336699"><br>In[1]:= </font>Table[{x[[1, 1]], N[Mean[x[[All, -1]]]]}, {x, byClassType}] <br><br>
+2.3  For å finne median til den utvalgte gruppe skriv <font color="#336699"><br>In[1]:= </font>Table[{x[[1, 1]], N[Median[x[[All, -1]]]]}, {x, byClassType}] <br><br>
+3.1 Du kan velge en annen parameter for beregning, for eksempel 2=bredde. Først, grupper etter bredde parameter<font color="#336699"><br>In[1]:=</font> byBreddeType = GatherBy[data, #[[2]] &]<br><br>
+3.2  Gjennomsnitt til den utvalgte parameter <font color="#336699"><br>In[1]:= </font>Table[{x[[1, 2]], N[Mean[x[[All, -1]]]]}, {x, byBreddeType}]<br><br>
+3.3  For å finne median til den utvalgte gruppe skriv<font color="#336699"><br>In[1]:= </font>Table[{x[[1, 2]], N[Median[x[[All, -1]]]]}, {x, byBreddeType}<br><br>
+<img src="img/2_2_1_media5.jpg">
+
+
