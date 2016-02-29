@@ -1,0 +1,18 @@
+﻿<h2>7.1 Normalfordelingen, <i>z</i><sub>&#945;</sub> </h2><p><b><font color="F70000"> Normalfordelingen N<sub>&#956;, &#963;</sub> (x)<br></font></b><b><font color="#336699"><p>Definisjon: Sannsynlighetsfordeling N<sub>&#956;, &#963;</sub> (x) &#402;=&#966;<br></font></b><img src="img/7_1_media1.jpg"><br><b>1.</b> Skriv som innput<p><font color="#336699">In[1]:= </font>PDF[NormalDistribution[&#956;, &#963;], x]<br><font color="#336699">Out[1]=</font><img src="img/7_1_media2.jpg"align="middle"></p><b>2.</b> Spesifiser verdiene<p><font color="#336699"><br>In[2]:= </font>PDF[NormalDistribution[&#956;-verdi, &#963;-verdi], x-verdi eller x<sub>1</sub>, x<sub>2</sub>]<br><p>
+<font color="009900">Eksempel:</font></b><br><img src="img/7_1_media3.jpg"><br><p>
+<b>3.</b> For å tegne grafen skriv<p>
+<font color="#336699">In[4]:=</font>Plot[Evaluate@
+  Table[PDF[NormalDistribution[&#956;, &#963;], x], {&#956;, &#956-verdi/verdier}eller {&#963;, &#963-verdi/verdier}], {x, x-verdi/verdier}, Filling -> Axis]<p>
+Ta gjerne større x-verdier enn angitt slik at du kan se mønster på grafen <font color="009900"><p>Eksempel:<p></font></b>for [&#956;=1.1, &#963;=2.1], x<sub>1</sub>=-6, x<sub>2</sub>=9]<br><img src="img/7_1_media4.jpg"><br><p>
+<b><font color="#336699"> Definisjon: Kumulativ sannsynlighet N<sub>&#956;, 	&#963;</sub> F=&#934;<br></font></b>
+<br><img src="img/7_1_media5.jpg"><br><b>1.</b> Skriv som innput<p><font color="#336699">In[1]:= </font>CDF[NormalDistribution[&#956;, &#963;], x]<br><font color="#336699">Out[1]=</font><img src="img/7_1_media6.jpg"align="middle"></p><b>2.</b> Spesifiser verdiene<p><font color="#336699"><br>In[2]:= </font>CDF[NormalDistribution[&#956;-verdi, &#963;-verdi], x-verdi eller x<sub>1</sub>, x<sub>2</sub>]<br><br><b>3.</b> Hadde du flere x-verdier og fikk flere resultater gi dem navn og trekk resultat  x<sub>1</sub> fra resultat x<sub>2</sub><p><font color="#336699">In[3]:=</font>{p<sub>1</sub>, p<sub>2</sub>} ={resultat x<sub>1</sub>, resultat x<sub>2</sub>}</p>
+<font color="009900">Eksempel:</font></b><br><br><img src="img/7_1_media7.jpg"><br><p>
+<b>4.</b> Det kan tegnes grafen ved å skrive<p>
+<font color="#336699">In[4]:=</font>Plot[Evaluate@
+  Table[CDF[NormalDistribution[&#956;, &#963;], x], {&#956;, &#956-verdi/verdier}eller {&#963;, &#963-verdi/verdier}], {x, x-verdi/verdier}, Filling -> Axis]<p>
+Ta gjerne større x-verdier enn angitt slik at du kan se mønster på grafen <font color="009900"><p>Eksempel:<p></font></b>for [&#956;=0, &#963;=1], x<sub>1</sub>=-6, x<sub>2</sub>=6]<br><img src="img/7_1_media8.jpg"><br><p>
+<font color="#336699"> <b>Definisjon ( <i>z</i><sub>&#945;</sub> den inverse til &#934;):</b></font> <br><br><img src="img/7_1_media9.jpg"><br><br><b><font <font color="F70000"><i>z</i><sub>&#945;</sub>  beregning:</font></b><br><br>
+<b>1.</b> Skriv <font color="#336699"><br>In[1]:= </font>InverseCDF[NormalDistribution[&#956;, &#963;], x]<br><br>
+<font color="009900">Eksempel:</font></b><br><br><img src="img/7_1_media10.jpg"><br><br><p><b>2.</b> Tegn gjerne grafen ved å skrive<p>
+<font color="#336699">In[2]:=</font>Plot[Evaluate@
+  Table[InverseCDF[NormalDistribution[&#956;, &#963;], x], {&#956;, &#956-verdi/verdier}eller {&#963;, &#963-verdi/verdier}], {x, x-verdi/verdier}, Filling -> Axis]<p> <br><img src="img/7_1_media11.jpg">
