@@ -1,0 +1,40 @@
+<html>
+<body>
+<h1>Diskrete fordelinger</h1><br>
+<h2>Binomisk fordeling</h2><br>
+For å benytte seg av binomisk fordeling i Mathematica gjør man:<br>
+BinomialDistribution[n, p] hvor "n" er antall forsøk og sansynligheten<br>
+p for å oppnå en suksess. Må også bruke funksjonen PDF[Dist, x] for å få<br> 
+en tall verdi. "Dist" er da BinomialDistribution funksjonen, mens x er <br>
+antall ønskede suksesser. Se figur under. Legg også merke til N[.....].<br>
+Dette er bare for å få tallet ut som desimal tall og ikke brøk. <br><br>
+<img src="img/diskrete/binomialDist.jpg"><br>
+<h2>Hypergeometrisk fordeling</h2><br>
+Hypergeometrisk fordeling er svært likt som binomisk fordeling, men siden<br>
+vi trekker og ikke legger tilbake vil oddsen endre seg for vært trekk. I<br>
+tilfeller hvor oddsen endre seg svært lite på et trekk. Kan binomisk fordeling<br>
+benyttes.<br>
+N[PDF[HypergeometricDistribution[n, ns, ntot], n1] <br>
+Hvor "n" er antall trekk fra populasjonen. "ns" er antall suksesser i populasjonen.<br>
+"ntot" er den totale størrelsen på populasjonen, og den siste variablen "n1" er<br>
+antall ønskede suksesser. Se figur under. <br><br>
+<img src="img/diskrete/hypergeometricDist.jpg"><br><br>
+<h2>Poisson-fordeling</h2><br>
+For å regne ut Poisson-fordelingen gjøres dette på samme måte som de andre fordelingene.<br>
+N[PDF[PoissonDistribution[u], X]], hvor u er Poisson sannsynlighetsfordelingen, og X er<br>
+variablen som du sjekker for. Hvis du får en oppgave P(X (element) {1,2}) må du gjør<br>
+to stk. Se bilde under.<br><br>
+<img src="img/diskrete/poisson.jpg"><br><br>
+<h2>Geometrisk-fordeling</h2><br>
+For geometrisk-fordeling gjøres dette igjen ganske likt som de andre fordelingene.<br>
+N[PDF[GeometricDistribution[p], x]] p er sansynligheten, mens x er antall forsøk.<br><br>
+Hvis man har en oppgave som P(X (element) {1, 2}) da gjøres dette slik:<br>
+<img src="img/diskrete/geomtrisk.jpg"><br><br>
+<h2>Negativ Binomisk fordeling</h2><br>
+Her også ganske lik som de andre fordelingene.<br>
+N[PDF[NegativeBinomialDistribution[p, n], x]], hvor p er sansynligheten, n er antall<br>
+parametre og x antall forsøk.<br>
+<img src="img/diskrete/neg.jpg"><br><br>
+<h2>Varians</h2><br>
+For alle disse regner vi ut varians helt likt. Variance[NegativeBinomialDistribution[n, p]]<br>
+Bare bytter ut funksjonene i midten. Variance[............].
