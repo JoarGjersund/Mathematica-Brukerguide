@@ -1,0 +1,23 @@
+﻿<h2>7.2 "Student`s" t-fordeling, ST<sup>-1</sup></h2><p><b><font color="F70000"> "Student`s" t-fordelingen  St<sub>(&#956;, &#963;,v)</sub> (x)<br></font></b><b><font color="#336699"><p>Definisjon: Sannsynlighetstettheten St (x)<br></font></b>
+ <img src="img/7_2_media1.jpg"><br><p> <font color="#FE9A2E"><b>For f=St<sub>(v)</sub>(x)</font></b><p><b>1.</b> Skriv som innput<p><font color="#336699">In[1]:= </font>PDF[StudentTDistribution[v], x]<br><font color="#336699">Out[1]=</font><img src="img/7_2_media2.jpg"align="middle"></p><b>2.</b> Spesifiser verdiene<p><font color="#336699"><br>In[2]:= </font>PDF[StudentTDistribution[v-verdi], x-verdi]<br><p>
+<font color="009900">Eksempel:</font></b><br><img src="img/7_2_media3.jpg"><br><p>
+<b>
+<font color="#FE9A2E">  For å finne f=St<sub>(&#956;, &#963;, v)</sub> (x)<br></font></b><b><p>1.</b> Skriv som innput<p><font color="#336699">In[1]:= </font>PDF[StudentTDistribution[&#956;, &#963;, v], x]<br><font color="#336699">Out[1]=</font><img src="img/7_2_media4.jpg"align="middle"></p><b>2.</b> Spesifiser verdiene<p><font color="#336699"><br>In[2]:= </font>PDF[StudentTDistribution[&#956;-verdi, &#963;-verdi, v-verdi], x-verdi]<br><p><b>3.</b> For å tegne grafen skriv<p>
+<font color="#336699">In[4]:=</font>Plot[Evaluate@
+  Table[PDF[StudentTDistribution[&#956;, &#963;, v], x], {&#956;, &#956-verdi eller verdier}eller {&#963;, &#963-verdi eller verdier} eller {v, v-verdi eller verdier}], {x, x-verdi eller verdier}, Filling -> Axis]<p>
+Ta gjerne større x-verdier enn angitt slik at du kan se mønster på grafen <font color="009900"><p>Eksempel:<p></font></b>for [&#956;=0.7, &#963;=1.1, v=5], x=1.9]<br><p><img src="img/7_2_media5.jpg"><br><p><p><p><br><br>
+<b><font color="#336699">
+
+Definisjon: Kumulativ sannsynlighet</font></b><p>
+<font color="#FE9A2E">  For F=ST<sub>(v)</sub> (x)<br></font></b><p> <img src="img/7_2_media6.jpg"><br><b>1.</b> Skriv som innput<p><font color="#336699">In[1]:= </font>CDF[StudentTDistribution[v], x]<br><font color="#336699">Out[1]=</font><img src="img/7_2_media7.jpg"align="middle"></p><b>2.</b> Spesifiser verdiene<p><font color="#336699"><br>In[2]:= </font>CDF[StudentTDistribution[v-verdi], x-verdi]<br><br><br><font color="009900"><p>Eksempel:<p></font></b><img src="img/7_2_media8.jpg"><br><p>
+<b>
+<font color="#FE9A2E">  For F=ST<sub>(&#956;, &#963;, v)</sub> (x)<br></font></b><b><p>1.</b> Skriv som innput<p><font color="#336699">In[1]:= </font>CDF[StudentTDistribution[&#956;, &#963;, v], x]<br><font color="#336699">Out[1]=</font><img src="img/7_2_media9.jpg"align="middle"></p><b>2.</b> Spesifiser verdiene<p><font color="#336699"><br>In[2]:= </font>CDF[StudentTDistribution[&#956;-verdi, &#963;-verdi, v-verdi], x-verdi]<br><p>
+<b>3.</b> Det kan tegnes grafen ved å skrive<p>
+<font color="#336699">In[4]:=</font>Plot[Evaluate@
+  Table[CDF[StudentTDistribution[&#956;, &#963;, v], x], {&#956;, &#956-verdi eller verdier}eller {&#963;, &#963-verdi eller verdier} eller {v, v-verdi eller verdier}], {x, x-verdi eller verdier}, Filling -> Axis, Exclusions -> None]<p>
+Det er bedre med større x-verdier for å kunne se mønster av funksjonen. <font color="009900"><p><b>Eksempel:<p></font></b>for [&#956;=0.7, &#963;=1.1, v=5], x=1.9]<br><img src="img/7_2_media10.jpg"><br><p>
+<font color="#336699"> <b>Definisjon:  <i>ST</i><sup>-1</sup> (den inverse til ST(x)):</b></font> <br><br><img src="img/7_2_media11.jpg"><br><br><b><font <font color="F70000"><i>ST</i><sup>-1</sup>  beregning:</font></b><br><br>
+<b>1.</b> Skriv <font color="#336699"><p>In[1]:= </font>InverseCDF[StudentTDistribution[&#956;, &#963;, v], x]<br><br>
+<font color="009900">Eksempel:</font></b><br><br><img src="img/7_2_media12.jpg"><br><br><p><b>2.</b> Tegn gjerne grafen ved å skrive<p>
+<font color="#336699">In[2]:=</font>Plot[Evaluate@
+  Table[InverseCDF[StudentTDistribution[&#956;, &#963;, v], x], {&#956;, &#956-verdi eller verdier}eller {&#963;, &#963-verdi eller verdier} eller {v, v-verdi eller verdier}], {x, x-verdi eller verdier}, Filling -> Axis, Exclusions -> None]<p><br><font color="009900"><p><b>Eksempel:<p></font></b>for [&#956;=0.7, &#963;=1.1, v=5], x=1.9]<br><img src="img/7_2_media13.jpg">

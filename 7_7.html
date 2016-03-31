@@ -1,0 +1,26 @@
+﻿<h2>7.7 Erlang-fordeling<br> </h2>Sannsynlighetsfordeling, kumulativ fordeling, forventning, varians</h2><p><b><font color="F70000">Erlang-fordeling<br></font></b><b><font color="#336699"><p>Definisjon: Sannsynlighetsfordeling (Probability density function) f(x)=Erl<sub>(k, &#955;)</sub>(x)<br></font></b>
+ <img src="img/7_7_media1.jpg"><br>Merk at <i>Erlang-fordeling</i> er for heltallige k :
+<p> <font color="#FE9A2E"><b>i Mathematica</font></b><p><b>1.</b> Innput<p><font color="#336699">In[1]:= </font>PDF[ErlangDistribution[k, &#955;], x]<br><font color="#336699">Out[1]=</font><img src="img/7_7_media2.jpg"align="middle"></p><b>2.</b> Spesifiser verdiene<p><font color="#336699">In[2]:= </font>PDF[ErlangDistribution[k-verdi, &#955;-verdi], x-verdi]<br><p>
+<font color="009900">Eksempel:</font></b><br><img src="img/7_7_media3.jpg"><br><p>
+<b>3.</b> Definer valgfritt en eller flere k-, lambda- og x-verdier og tegn funksjonen.<p>
+<font color="#336699">In[4]:=</font>Plot[Evaluate@
+  Table[PDF[ErlangDistribution[k, &#955;], 
+    x], {k, {k-verdi eller verdier}} ], {x, x- eller x-verdier}, Filling -> Axis]<p>eller ved<p><font color="#336699">In[5]:=</font>Plot[Evaluate@
+  Table[PDF[ErlangDistribution[k, &#955;], 
+    x], {&#955;, {&#955;-verdi eller verdier}} ], {x, x- eller x-verdier}, Filling -> Axis, PlotRange -> All]<p>
+ <font color="009900"><p>Eksempel:<p></font></b>for [k=13, &#955;=4.4], x<sub>1</sub>=0, x<sub>2</sub>=7]<br><p><img src="img/7_7_media4.jpg"><br><p><font color="009900">Eksempel med flere verdier:</font><br><br>for {k<sub>1</sub>=1, k<sub>2</sub>=3, k<sub>3</sub>=5}, &#955;=0.3, x<sub>1</sub>=0, x<sub>2</sub>=22 og for for  k=4,   {&#955;<sub>1</sub>=0.5, &#955;<sub>2</sub>=1, &#955;<sub>3</sub>=2}, x<sub>1</sub>=0, x<sub>2</sub>=15 <br><br><p><img src="img/7_7_media5.jpg"><br><p><p><p><br><br>
+<b><font color="#336699">
+
+Definisjon: Kumulativ sannsynlighet (Cumulative distribution function):</font></b><p>
+<img src="img/7_7_media6.jpg"><br><p><font color="#FE9A2E"><b>Beregning i Mathematica:<br></font></b><br><b>1.</b> Skriv som innput<p><font color="#336699">In[1]:= </font>CDF[ErlangDistribution[k, &#955;], x]<br><font color="#336699">Out[1]=</font><img src="img/7_7_media7.jpg"align="middle"></p><b>2.</b> Spesifiser verdiene<p><font color="#336699">In[2]:= </font>CDF[ErlangDistribution[k-verdi, &#955;-verdi], x-verdi]<br><p>
+<font color="009900">Eksempel:</font></b><br><img src="img/7_7_media8.jpg"><br><p>
+<b>3.</b> Plot grafen med en eller flere k-, &#955;-  og x-verdier<p>
+<font color="#336699">In[1]:=</font>Plot[Evaluate@
+  Table[PDF[ErlangDistribution[k, &#955;], 
+    x], {k, {k-verdi eller verdier}} ], {x, x- eller x-verdier}, Filling -> Axis]<p>eller ved<p><font color="#336699">In[2]:=</font>Plot[Evaluate@
+  Table[PDF[ErlangDistribution[k, &#955;], 
+    x], {&#955;, {&#955;-verdi eller verdier}} ], {x, x- eller x-verdier}, Filling -> Axis, PlotRange -> All]<p><p>
+ <font color="009900"><p>Eksempel:<p></font></b>for [k=13, &#955;=4.4], x<sub>1</sub>=0, x<sub>2</sub>=10]<br><p><img src="img/7_7_media9.jpg"><br><p><font color="009900">Eksempel med flere verdier:</font><br><br>for {k<sub>1</sub>=1, k<sub>2</sub>=3, k<sub>3</sub>=5}, &#955;=0.3, x<sub>1</sub>=0, x<sub>2</sub>=22 og for for  k=4,   {&#955;<sub>1</sub>=0.5, &#955;<sub>2</sub>=1, &#955;<sub>3</sub>=2}, x<sub>1</sub>=0, x<sub>2</sub>=15 <br><br><p><img src="img/7_7_media10.jpg"><br><p>
+<b><font color="#336699"><font color="F70000"> Forventing (mean) og Varians (variance):</b></font><br><p>
+<b><font color="#336699"><p>Definisjon:</b></font></font><br><p><img src="img/7_7_media11.jpg"><br><p><font color="#FE9A2E"><b>Beregning i Mathematica:<br><p></b></font><b>1.</b> Innput<p><font color="#336699"> In[1]:= </font>Mean[ErlangDistribution[k, &#955;]]<p><p><font color="#336699"> In[2]:= </font>Variance[ErlangDistribution[k, &#955;]]<p><p><b>2.</b> Spesifiser verdiene<br><font color="#336699"><br>In[3]:= </font>Mean[ErlangDistribution[k-, &#955;-verdi]]<br><font color="#336699"><br>In[4]:= </font>Variance[ErlangDistribution[k-, &#955;-verdi]]<br><p><font color="009900">Eksempel:</font></b><br><img src="img/7_7_media12.jpg">
+

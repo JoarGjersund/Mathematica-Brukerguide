@@ -1,0 +1,24 @@
+﻿<h2>7.4 Beta-fordelingen &#946;<sub>(a, b)</sub></h2><p>
+Sannsynlighetsfordeling, kumulativ fordeling, forventning, varians<p><b><font color="F70000">Betafordeling <br></font></b><b><font color="#336699"><p>Definisjon: Sannsynlighetsfordeling f(x)=&#946;<sub>(a, b)</sub><br></font></b>
+ <img src="img/7_4_media1.jpg"><br><p> <font color="#FE9A2E"><b>Beregning i Mathematica</font></b><p><b>1.</b> Skriv som innput<p><font color="#336699">In[1]:= </font>PDF[BetaDistribution[ &#945;, &#946;], x]<br><font color="#336699">Out[1]=</font><img src="img/7_4_media2.jpg"align="middle"></p><b>2.</b> Spesifiser verdiene<p><font color="#336699">In[2]:= </font>PDF[BetaDistribution[&#945;-verdi, &#946;-verdi], x-verdi]<br><p>
+<font color="009900">Eksempel:</font></b><br><img src="img/7_4_media3.jpg"><br><p>
+<b>3.</b> Når du tegner grafen kan du velge om du vil ha definert en eller flere alfa-, beta-, x-er.<p>
+<font color="#336699">In[4]:=</font>Plot[Evaluate@
+  Table[PDF[BetaDistribution[&#945; eller &#945;-verdi, &#946; eller &#946;-verdi], 
+    x], {&#945;, {&#945;-verdi eller verdier}} eller {&#946;, {&#946;-verdi eller verdier}}], {x, 0, 1}, Filling -> Axis]<p>
+ <font color="009900"><p>Eksempel:<p></font></b>for [&#945;=0.25, &#946;=1.2,], x<sub>1</sub>=0, x<sub>2</sub>=0.7]<br><p><img src="img/7_4_media4.jpg"><br><p><font color="009900">Eksempel med flere verdier:</font><br><br>for {&#945;<sub>1</sub>=0.25,&#945;<sub>2</sub>=3, &#945;<sub>3</sub>=5}, &#946;=1.2, x<sub>1</sub>=0, x<sub>2</sub>=0.7 og for &#945;=0.25, {&#946;<sub>1</sub>=1.2, &#946;<sub>2</sub>=3, &#946;<sub>3</sub>=5}, x<sub>1</sub>=0, x<sub>2</sub>=0.7 <br><br><p><img src="img/7_4_media5.jpg"><br><p><p><p><br><br>
+<b><font color="#336699">
+
+Definisjon: Kumulativ sannsynlighet</font></b><p>
+F<sup>&#946;</sup><sub>(a, b)</sub>(x)=B<sub>(a,b)</sub> (x)<br></font></b><p>der B er den inkomplette Euler beta-funksjonen:<br><p>B<sub>(a,b)</sub><t>= <sub><sub>0</sub></sub>&#8747;<sup><sup>x</sup></sup> &#946;<sub>(a,b)</sub>(t)dt for t&#8712;[0,1]<br><p><font color="#FE9A2E"><b>Beregning i Mathematica:<p></font></b><b>1.</b> Skriv som innput<p><font color="#336699">In[1]:= </font>CDF[BetaDistribution[ &#945;, &#946;], x]<br><font color="#336699">Out[1]=</font><img src="img/7_4_media6.jpg"align="middle"></p><b>2.</b> Spesifiser verdiene<p><font color="#336699">In[2]:= </font>CDF[BetaDistribution[&#945;-verdi, &#946;-verdi], x-verdi]<br><p>
+<font color="009900">Eksempel:</font></b><br><img src="img/7_4_media7.jpg"><br><p>
+<b>3.</b> Plot grafen med en eller flere &#945;- &#946;- og x-verdier<p>
+<font color="#336699">In[4]:=</font>Plot[Evaluate@
+  Table[CDF[BetaDistribution[&#945; eller &#945;-verdi, &#946; eller &#946;-verdi], 
+    x], {&#945;, {&#945;-verdi eller verdier}} eller {&#946;, {&#946;-verdi eller verdier}}], {x, 0, 1}, Filling -> Axis]<p>
+ <font color="009900"><p>Eksempel:<p></font></b>for [&#945;=2, &#946;=1.5,], x<sub>1</sub>=0, x<sub>2</sub>=1]<br><p><img src="img/7_4_media8.jpg"><br><p>for {&#945;<sub>1</sub>=0.5,&#945;<sub>2</sub>=2, &#945;<sub>1</sub>=4}, &#946;=1.5, x<sub>1</sub>=0, x<sub>2</sub>=1 og for &#945;=2, {&#946;<sub>1</sub>=0.25, &#946;<sub>2</sub>=2, &#946;<sub>3</sub>=4}, x<sub>1</sub>=0, x<sub>2</sub>=1 <br><br><p><img src="img/7_4_media9.jpg"><br><p>
+<b><font color="#336699"><font color="F70000"> Forventing (mean):</b></font><br><p>
+<b><font color="#336699"><p>Definisjon:</b></font></font><br><p><img src="img/7_4_media10.jpg"><br><p><font color="#FE9A2E"><b>Beregning i Mathematica:<br><p></b></font><b>1.</b><font color="#336699"> In[1]:= </font>Mean[BetaDistribution[&#945;, &#946;]]<p><p><b>2.</b> Spesifiser verdiene<br><font color="#336699"><br>In[2]:= </font>Mean[BetaDistribution[&#945;-verdi, &#946;-verdi]]<br><p><font color="009900">Eksempel:</font></b><br><img src="img/7_4_media11.jpg"><br>
+<b><font color="#336699"><br><p><b><font color="F70000"> Varians (variance):</b></font><br><p>
+<b><font color="#336699"><p>Definisjon:</b></font><br><p><img src="img/7_4_media12.jpg"><br><p><font color="#FE9A2E"><b>Innput:</b><br><p></b></font></font><b>1.</b><font color="#336699"> In[1]:= </font>Variance[BetaDistribution[&#945;, &#946;]]<p><p><b>2.</b> Spesifiser verdiene<br><font color="#336699"><br>In[2]:= </font>Variance[BetaDistribution[&#945;-verdi, &#946;-verdi]]<br><p><font color="009900">Eksempel:</font></b><br><img src="img/7_4_media13.jpg"><br><p>
+

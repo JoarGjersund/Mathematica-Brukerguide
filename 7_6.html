@@ -1,0 +1,25 @@
+﻿<h2>7.6 Eksponentialfordelingen</h2><p>Sannsynlighetsfordeling, kumulativ fordeling, forventning, varians, median<p> <b><font color="F70000">Eksponentialfordeling <br></font></b><b><font color="#336699"><p>Definisjon: Sannsynlighetsfordeling (Probability density function) f(x)=Exp<sub>	&#955;</sub>(x)<br></font></b>
+ <img src="img/7_6_media1.jpg"><br>Merk at <i>Eksponential fordeling</i> er en spesialtilfelle av <i>Erlangfordeling</i>, dvs. når n=1 har vi <i> Eksponentialfordeling</i>:<br>
+Exp<sub>&#955;</sub>(x)=Erl<sub>1,&#955;</sub>(x)
+<p> <font color="#FE9A2E"><b>Beregning i Mathematica</font></b><p><b>1.</b> Innput<p><font color="#336699">In[1]:= </font>PDF[ExponentialDistribution[&#955;], x]<br><font color="#336699">Out[1]=</font><img src="img/7_6_media2.jpg"align="middle"></p><b>2.</b> Spesifiser verdiene<p><font color="#336699">In[2]:= </font>PDF[EksponentialDistribution[&#955;-verdi], x-verdi]<br><p>
+<font color="009900">Eksempel:</font></b><br><img src="img/7_6_media3.jpg"><br><p>
+<b>3.</b> Definer valgfritt en eller flere lambda- og x-verdier og plot funksjonen.<p>
+<font color="#336699">In[4]:=</font>Plot[Evaluate@
+  Table[PDF[ExponentialDistribution[&#955; eller &#955;-verdi], 
+    x], {&#955;, {&#955;-verdi eller verdier}} ], {x, x- eller x-verdier}, Filling -> Axis, PlotRange -> All]<p>
+ <font color="009900"><p>Eksempel:<p></font></b>for [&#955;=1.25], x<sub>1</sub>=0, x<sub>2</sub>=4]<br><p><img src="img/7_6_media4.jpg"><br><p><font color="009900">Eksempel med flere verdier:</font><br><br>for {&#955;<sub>1</sub>=0.5, &#955;<sub>2</sub>=1, &#955;<sub>3</sub>=2}, x<sub>1</sub>=0, x<sub>2</sub>=3 <br><br><p><img src="img/7_6_media5.jpg"><br><p><p><p><br><br>
+<b><font color="#336699">
+
+Definisjon: Kumulativ sannsynlighet (Cumulative distribution function):</font></b><p>
+<img src="img/7_6_media6.jpg"><br><p><font color="#FE9A2E"><b>Beregning i Mathematica:<br></font></b><br><b>1.</b> Skriv som innput<p><font color="#336699">In[1]:= </font>CDF[ExponentialDistribution[&#955;], x]<br><font color="#336699">Out[1]=</font><img src="img/7_6_media7.jpg"align="middle"></p><b>2.</b> Spesifiser verdiene<p><font color="#336699">In[2]:= </font>CDF[ExponentialDistribution[&#955;-verdi], x-verdi]<br><p>
+<font color="009900">Eksempel:</font></b><br><img src="img/7_6_media8.jpg"><br><p>
+<b>3.</b> Plot grafen med en eller flere &#955;-  og x-verdier.<p>
+<font color="#336699">In[4]:=</font>Plot[Evaluate@
+  Table[CDF[ExponentialDistribution[&#955;], 
+    x], {&#955;, {&#955;-verdi eller &#955;-verdier}}], {x, x-verdi eller x-verdier}, Filling -> Axis]<p>
+ <font color="009900"><p>Eksempel:<p></font></b>for [&#955;=1.25], x<sub>1</sub>=0, x<sub>2</sub>=3]<br><p><img src="img/7_6_media9.jpg"><br><p><font color="009900">Eksempel med flere verdier:</font><br><br>for {&#955;<sub>1</sub>=0.5, &#955;<sub>2</sub>=1, &#955;<sub>3</sub>=2}, x<sub>1</sub>=0, x<sub>2</sub>=4<br><br><p><img src="img/7_6_media10.jpg"><br><p>
+<b><font color="#336699"><font color="F70000"> Forventing (mean) og Varians (variance):</b></font><br><p>
+<b><font color="#336699"><p>Definisjon:</b></font></font><br><p><img src="img/7_6_media11.jpg"><br><p><font color="#FE9A2E"><b>Beregning i Mathematica:<br><p></b></font><b>1.</b> Innput<p><font color="#336699"> In[1]:= </font>Mean[ExponentialDistribution[&#955;]]<p><p><font color="#336699"> In[2]:= </font>Variance[ExponentialDistribution[&#955;]]<p><p><b>2.</b> Spesifiser verdiene<br><font color="#336699"><br>In[3]:= </font>Mean[ExponentialDistribution[&#955;-verdi]]<br><font color="#336699"><br>In[4]:= </font>Variance[ExponentialDistribution[&#955;-verdi]]<br><p><font color="009900">Eksempel:</font></b><br><img src="img/7_6_media12.jpg"><br>
+<b><font color="#336699"><br><p><b><font color="F70000"> Median:</b></font><br><p>
+<font color="#FE9A2E"><b>Innput:</b><br><p></b></font></font><b>1.</b> Skriv<p><font color="#336699"> In[1]:= </font>Median[ExponentialDistribution[&#955;]]<p><p><b>2.</b> Spesifiser lambdaverdi<br><font color="#336699"><br>In[2]:= </font>Median[ExponentialDistribution[&#955;-verdi]]<br><p><font color="009900">Eksempel:</font></b><br><img src="img/7_6_media13.jpg"><br><p>
+
