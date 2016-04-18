@@ -73,11 +73,15 @@
         });
 		
 		
-		$("#8").click(function() {
-            $("#content").load("8.html");
-        });
+		$("#8").click(function() { $("#content").load("8.html"); });
         
-        
+		$("#13_1").click(function() { $("#content").load("13_1.html"); });
+        $("#13_1_1").click(function() { $("#content").load("13_1_1.html"); });
+        $("#13_1_2").click(function() { $("#content").load("13_1_2.html"); });
+        $("#13_1_3").click(function() { $("#content").load("13_1_3.html"); });
+        $("#13_1_4").click(function() { $("#content").load("13_1_4.html"); });
+        $("#13_1_5").click(function() { $("#content").load("13_1_5.html"); });
+        $("#13_1_6").click(function() { $("#content").load("13_1_6.html"); });
     });
         
     
@@ -108,7 +112,7 @@
 							<LI><a id="1_0" href="#">Om denne guiden</a></LI>
                             <LI><a id="1_1" href="#">Basics om Mathematica og Wolfram Alpha</a></LI>
 							<LI><a id="1_2" href="#">Oppsett og grunnleggende innstillinger</a></LI>
-							<LI><a id="1_3" href="#">Grunnleggende Syntaks</a></LI>
+							<LI><a id="1_3" target="_blank" href="https://reference.wolfram.com/language/guide/Syntax.html">Grunnleggende Syntaks</a></LI>
 						</OL>
 			
 					<LI>Data</LI>
@@ -157,9 +161,14 @@
 					
 					<LI><a id="8" href="#">Diskrete fordelinger</a></LI>
 					<LI>Andre fordelinger</LI>
-					<LI>Statistisk Inferens</LI>
-					
-				</OL>
+					<LI><a id="13_1" href="#">Statistisk Inferens</a></LI><OL>
+                            <LI><a id="13_1_1" href="#">Beta konfidensintervall</a></LI>                
+							<LI><a id="13_1_2" href="#">Beta konfidensintervall (Bernoulli prior)</a></LI>
+                            <LI><a id="13_1_3" href="#">Normal konfidensintervall</a></LI>
+                            <LI><a id="13_1_4" href="#">Normal konfidensintervall (med prior)</a></LI>
+                            <LI><a id="13_1_5" href="#">Students t konfidensintervall</a></LI>
+                            <LI><a id="13_1_6" href="#">Students t konfidensintervall (med prior)</a></LI>
+				    </OL>
 		</UL>
 
             

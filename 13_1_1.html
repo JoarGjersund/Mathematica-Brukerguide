@@ -1,0 +1,77 @@
+<h2>Beta konfidensintervall</h2><br>
+<img src="img/13_1_1.jpg"><br>
+Endringer gjøres på de første linjene (som forklart), deretter trykker du Shift+Enter.<br>
+
+<textarea resizable="true" length="100%" readonly cols="50" rows="30">
+(*\[Beta]-fordelingen *)
+(*Sett inn \[Sigma]*) 
+a := 568;
+(*Sett inn \[Mu]*) 
+b := 434;
+(*Velg størrelsen på konfidensintervallet*)
+konfint := 0.95;
+(*For endringer på intervallet, normalt skal denne bare stå på 0 til \
+1*)
+Nedre := 0.0;
+Ovre := 1.0;
+
+(*Her trenger man ikke gjøre endringer*)
+Temp := BetaDistribution[a, b];
+f[t_] := PDF[Temp, t];
+F[t_] := CDF[Temp, t];
+Ff[t_] := InverseCDF[Temp, t];
+theInterval[t_, start_, end_] := 
+ UnitStep[t - Ff[start]] (1 - UnitStep[t - Ff[1 - end]])
+cF[t_, start_, end_] := f[t] theInterval[t, start, end];
+ciPlot[start_, end_, range_] := 
+ Plot[{cF[x, start, end], f[x]}, {x, Nedre, Ovre}, PlotRange -> All, 
+  Filling -> {1 -> {Axis, {Green}}, 2 -> {{1}, {White}}}]
+ciIPlot[start_, end_, range_] := 
+ Plot[0.1 theInterval[x, start, end], {x, Nedre, Ovre}, 
+  PlotRange -> {Nedre, Ovre}, Filling -> {1 -> {Axis, {Red}}}]
+cendPlot[start_, end_, range_] := 
+ Plot[{cF[x, start, end], f[x]}, {x, 0, 1}, PlotRange -> All, 
+  Filling -> {1 -> {Axis, {White}}, 2 -> {{1}, {Red}}}]
+f[x]
+F[x]
+Ff[x]
+Mean[Temp]
+F[Mean[Temp]] // N
+Show[Plot[f[t], {t, Nedre, Ovre}], 
+ DiscretePlot[f[Mean[Temp]], {k, {Mean[Temp]}}, 
+  FillingStyle -> RGBColor[3, 0, 0, 1], 
+  PlotStyle -> RGBColor[3, 0, 0, 0]]]
+
+(*Venstre intervall*)
+
+Show[
+ ciPlot[0, 0.2, 0.03], 
+ DiscretePlot[f[Mean[Temp]], {k, {Mean[Temp]}}, 
+  FillingStyle -> RGBColor[3, 0, 0, 1], 
+  PlotStyle -> RGBColor[3, 0, 0, 0]]
+ ]
+ciIPlot[0, 0.2, 0.03]
+{Ff[0.0], Ff[konfint]}
+
+(*Høyre intervall*)
+Show[
+ ciPlot[0.2, 0, 0.03], 
+ DiscretePlot[f[Mean[Temp]], {k, {Mean[Temp]}}, 
+  FillingStyle -> RGBColor[3, 0, 0, 1], 
+  PlotStyle -> RGBColor[3, 0, 0, 0]]
+ ]
+ciIPlot[0.2, 0, 0.03]
+{Ff[1 - konfint], Ff[1]}
+
+(*Symetriskkonfidensintervall om \[Mu]*)
+Show[
+ ciPlot[F[Mean[Temp]] - 0.4, 0.6 - F[Mean[Temp]], 0.03], 
+ DiscretePlot[f[Mean[Temp]], {k, {Mean[Temp]}}, 
+  FillingStyle -> RGBColor[3, 0, 0, 1], 
+  PlotStyle -> RGBColor[3, 0, 0, 0]]
+ ]
+ciIPlot[F[Mean[Temp]] - 0.4, 0.6 - F[Mean[Temp]], 0.03]
+{Ff[F[Mean[Temp]] - konfint/2], Ff[F[Mean[Temp]] + konfint/2]}
+
+</textarea>
+<a href="resources/Beta_Konfidensintervall.nb">download .nb file</a>
