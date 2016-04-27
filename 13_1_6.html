@@ -64,32 +64,32 @@ Show[Plot[f[t], {t, Nedre, Ovre}],
 (*Venstre intervall*)
 
 Show[
- ciPlot[0, 0.2, 0.03], 
+ ciPlot[0, 1 - konfint, 0.03], 
  DiscretePlot[f[Mean[Temp]], {k, {Mean[Temp]}}, 
   FillingStyle -> RGBColor[3, 0, 0, 1], 
   PlotStyle -> RGBColor[3, 0, 0, 0]]
  ]
-ciIPlot[0, 0.2, 0.03]
+ciIPlot[0, 1 - konfint, 0.03]
 {Ff[0.0], Ff[konfint]}
 
 (*Høyre intervall*)
 Show[
- ciPlot[0.2, 0, 0.03], 
+ ciPlot[1 - konfint, 0, 0.03], 
  DiscretePlot[f[Mean[Temp]], {k, {Mean[Temp]}}, 
   FillingStyle -> RGBColor[3, 0, 0, 1], 
   PlotStyle -> RGBColor[3, 0, 0, 0]]
  ]
-ciIPlot[0.2, 0, 0.03]
+ciIPlot[1 - konfint, 0, 0.03]
 {Ff[1 - konfint], Ff[1]}
 
 (*Symetriskkonfidensintervall om \[Mu]*)
 Show[
- ciPlot[F[Mean[Temp]] - 0.4, 0.6 - F[Mean[Temp]], 0.03], 
- DiscretePlot[f[Mean[Temp]], {k, {Mean[Temp]}}, 
+ ciPlot[F[Mean[Temp]] - konfint/2, 1 - konfint/2 - F[Mean[Temp]], 
+  0.03], DiscretePlot[f[Mean[Temp]], {k, {Mean[Temp]}}, 
   FillingStyle -> RGBColor[3, 0, 0, 1], 
   PlotStyle -> RGBColor[3, 0, 0, 0]]
  ]
-ciIPlot[F[Mean[Temp]] - 0.4, 0.6 - F[Mean[Temp]], 0.03]
+ciIPlot[F[Mean[Temp]] - konfint/2, 1 - konfint/2 - F[Mean[Temp]], 0.03]
 {Ff[F[Mean[Temp]] - konfint/2], Ff[F[Mean[Temp]] + konfint/2]}
 </textarea>
 <a href="resources/St_Konfidensintervall_med_prior.nb">download .nb file</a>
